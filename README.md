@@ -87,42 +87,10 @@ pip install -r requirements.txt
 
 ## 🚀 使用方法
 
-### 运行示例
+### 运行示例：bash run.sh， 或者：
 
 ```bash
 python main.py  # 使用默认配置与示例日期/标的
-```
-
-或直接在代码中：
-
-```python
-from tradingagents.graph.trading_graph import TradingAgentsGraph
-from tradingagents.default_config import DEFAULT_CONFIG
-
-ta = TradingAgentsGraph(debug=True, config=DEFAULT_CONFIG.copy())
-_, decision = ta.propagate("NVDA", "2024-05-10")
-print(decision)
-```
-
-### 自定义配置
-
-```python
-from tradingagents.graph.trading_graph import TradingAgentsGraph
-from tradingagents.default_config import DEFAULT_CONFIG
-
-config = DEFAULT_CONFIG.copy()
-config["deep_think_llm"] = "gpt-4o-mini"
-config["quick_think_llm"] = "gpt-4o-mini"
-config["data_vendors"] = {
-    "core_stock_apis": "yfinance",
-    "technical_indicators": "yfinance",
-    "fundamental_data": "alpha_vantage",
-    "news_data": "google",  # openai / alpha_vantage / google / local
-}
-
-ta = TradingAgentsGraph(debug=False, config=config)
-_, decision = ta.propagate("AAPL", "2024-05-10")
-print(decision)
 ```
 
 ## 🔄 工作流程
