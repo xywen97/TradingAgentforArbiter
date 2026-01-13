@@ -152,6 +152,7 @@ TradingAgent/
 ├── eval_results/            # 样例运行日志
 └── tradingagents/
     ├── default_config.py    # 默认配置
+    ├── .env                 # 放置环境变量：OPENAI_API_KEY，OPENAI_BASE_URL，ALPHA_VANTAGE_API_KEY
     ├── agents/              # 各类 Agent
     │   ├── researchers/     # Bull/Bear 研究员
     │   ├── analysts/        # 分析师
